@@ -4,6 +4,8 @@ const progressBar = document.querySelector(".progress-bar");
 
 let quotes = [];
 let quoteIndex = 0;
+let touchStartY = 0;
+let touchEndY = 0;
 
 // 异步加载田语数据（假设quotes.txt包含每行一个田语）
 fetch('quotes.txt')
@@ -32,6 +34,28 @@ setInterval(() => {
     quoteIndex = (quoteIndex + 1) % quotes.length;
     showQuote(quoteIndex);
 }, 3000);
+
+//监听屏幕触摸事件
+document.addEventListener("touchstart", (event) => {
+    touchStartY = event.touches[0].clientY;
+});
+
+document.addEventListener("touchend", (event) => {
+    touchEndY = event.changedTouches[0].clientY;
+    
+    const deltaY = touchEndY - touchStartY;
+
+    if (deltaY > 0) {
+        // 向下滑动
+        window.scrollBy(0, window.innerHeight);
+    } else if (deltaY < 0) {
+        // 向上滑动
+        window.scrollBy(0, -window.innerHeight);
+    }
+
+    // 更新进度条位置
+    updateProgressBar();
+});
 
 // 监听鼠标滚轮事件
 document.addEventListener("wheel", event => {
