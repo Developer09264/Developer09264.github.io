@@ -6,6 +6,7 @@ let quotes = [];
 let quoteIndex = 0;
 let touchStartY = 0;
 let touchEndY = 0;
+let isInWelcomePage = true;
 
 // 异步加载田语数据（假设quotes.txt包含每行一个田语）
 fetch('quotes.txt')
@@ -35,6 +36,20 @@ setInterval(() => {
     showQuote(quoteIndex);
 }, 3000);
 
+
+// 获取欢迎页面的高度
+const welcomePageHeight = document.querySelector(".welcome-page").offsetHeight;
+
+//向下滚动
+function down(h){
+        window.scrollBy(0,h);
+}
+
+//向上滚动
+function up(h){
+        window.scrollBy(0, -h);
+}
+
 //监听屏幕触摸事件
 document.addEventListener("touchstart", (event) => {
     touchStartY = event.touches[0].clientY;
@@ -45,13 +60,16 @@ document.addEventListener("touchend", (event) => {
     
     const deltaY = touchEndY - touchStartY;
 
-    if (deltaY > 0) {
-        // 向下滑动
-        window.scrollBy(0, -window.innerHeight);
-    } else if (deltaY < 0) {
-        // 向上滑动
-        window.scrollBy(0, window.innerHeight);
-    }
+        if (deltaY > 0) {
+            // 向下滑动
+        up(welcomePageHeight);
+        } else if (deltaY < 0) {
+            // 向上滑动
+            down(welcomePageHeight);
+        }
+   
+
+    
 
     // 更新进度条位置
     updateProgressBar();
@@ -61,10 +79,10 @@ document.addEventListener("touchend", (event) => {
 document.addEventListener("wheel", event => {
     if (event.deltaY > 0) {
         // 向下滚动
-        window.scrollBy(0, window.innerHeight);
+        down(welcomePageHeight);
     } else {
         // 向上滚动
-        window.scrollBy(0, -window.innerHeight);
+        up(welcomePageHeight);
     }
 
     // 更新进度条位置
@@ -88,7 +106,21 @@ function updateProgressBar() {
 }
 
 // 监听页面滚动事件，以便在页面加载时更新进度条
-window.addEventListener("scroll", updateProgressBar);
+window.addEventListener("scroll", () => {
+
+const scrollPosition = window.scrollY;
+    
+    if (scrollPosition >= welcomePageHeight) {
+        // 当用户滚动到全部田语页面时显示进度条
+        progressBar.style.display = "block";
+        
+        // 计算并更新进度条位置
+        updateProgressBar();
+    } else {
+        // 在欢迎页面上隐藏进度条
+        progressBar.style.display = "none";
+    }
+});
 
 window.addEventListener("scroll", () => {
     const welcomePage = document.querySelector(".welcome-page");
