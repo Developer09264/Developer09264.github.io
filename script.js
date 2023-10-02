@@ -77,11 +77,3 @@ window.addEventListener("scroll", () => {
         welcomePage.classList.remove("fade-out");
     }
 });
-
-// 检测移动设备
-const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-
-// 仅在移动设备上启用平滑滚动
-if (isMobile) {
-  document.documentElement.style.scrollBehavior = 'smooth';
-}
