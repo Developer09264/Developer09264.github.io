@@ -5,6 +5,22 @@ const progressBar = document.querySelector(".progress-bar");
 let quotes = [];
 let quoteIndex = 0;
 
+let lastScrollY = window.scrollY;
+
+// 监听页面滚动事件
+window.addEventListener("scroll", () => {
+    const currentScrollY = window.scrollY;
+    if (currentScrollY > lastScrollY) {
+        // 向下滚动
+        window.scrollBy(0, currentScrollY - lastScrollY);
+    } else {
+        // 向上滚动
+        window.scrollBy(0, -(lastScrollY - currentScrollY));
+    }
+    lastScrollY = currentScrollY;
+});
+
+
 // 异步加载田语数据（假设quotes.txt包含每行一个田语）
 fetch('quotes.txt')
   .then(response => response.text())
