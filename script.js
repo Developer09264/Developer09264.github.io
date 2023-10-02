@@ -47,10 +47,10 @@ document.addEventListener("touchend", (event) => {
 
     if (deltaY > 0) {
         // 向下滑动
-        window.scrollBy(0, window.innerHeight);
+        window.scrollBy(0, -window.innerHeight);
     } else if (deltaY < 0) {
         // 向上滑动
-        window.scrollBy(0, -window.innerHeight);
+        window.scrollBy(0, window.innerHeight);
     }
 
     // 更新进度条位置
