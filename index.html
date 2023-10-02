@@ -1,12 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>田语</title>
-    <link rel="icon" type="image/png" href="favicon.png">
+    <title>田语网站</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
-    <h1>田语</h1>
-    <p>人在做，天在看</p>
-    <p>若要人不知,除非己莫为</p>
+    <div class="welcome-page">
+        <div class="background"></div>
+        <div class="content">
+            <h1 class="title">田语</h1>
+            <p class="quote" id="quote">这里将显示一句话</p>
+        </div>
+    </div>
+    <div class="quotes">
+        <h2>所有田语</h2>
+        <ul id="quote-list">
+            <!-- 这里可以通过JavaScript将所有田语动态添加 -->
+        </ul>
+    </div>
+    <div class="progress-bar"></div>
+    <script src="script.js"></script>
 </body>
 </html>
