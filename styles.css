@@ -59,24 +59,28 @@ html {
     flex-direction: column;
     padding: 20px;
     box-sizing: border-box;
-    transition: opacity 0.8s ease-out; /* 添加过渡效果 */
 }
 
-/* 如果内容不够屏幕高度，垂直居中显示，并在上下添加空白 */
+/* 添加过渡效果 */
 .quotes-content {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    opacity: 0; /* 初始设置透明度为0 */
+    transition: opacity 0.8s ease-out;
 }
 
 /* 在上下添加空白 */
 .quotes-content::before, .quotes-content::after {
     content: "";
     flex-grow: 1;
-    transition: opacity 0.8s ease-out; /* 添加过渡效果 */
 }
 
+/* 当类名为show的元素显示时，设置透明度为1 */
+.quotes-content.show {
+    opacity: 1;
+}
 
 #quote-list {
     list-style: none;
