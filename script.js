@@ -40,55 +40,6 @@ setInterval(() => {
 // 获取欢迎页面的高度
 const welcomePageHeight = document.querySelector(".welcome-page").offsetHeight;
 
-//向下滚动
-function down(h){
-        window.scrollBy(0,h);
-}
-
-//向上滚动
-function up(h){
-        window.scrollBy(0, -h);
-}
-
-//监听屏幕触摸事件
-document.addEventListener("touchstart", (event) => {
-    touchStartY = event.touches[0].clientY;
-});
-
-document.addEventListener("touchend", (event) => {
-    touchEndY = event.changedTouches[0].clientY;
-    
-    const deltaY = touchEndY - touchStartY;
-
-        if (deltaY > 0) {
-            // 向下滑动
-        up(welcomePageHeight);
-        } else if (deltaY < 0) {
-            // 向上滑动
-            down(welcomePageHeight);
-        }
-   
-
-    
-
-    // 更新进度条位置
-    updateProgressBar();
-});
-
-// 监听鼠标滚轮事件
-document.addEventListener("wheel", event => {
-    if (event.deltaY > 0) {
-        // 向下滚动
-        down(welcomePageHeight);
-    } else {
-        // 向上滚动
-        up(welcomePageHeight);
-    }
-
-    // 更新进度条位置
-    updateProgressBar();
-});
-
 // 更新进度条位置
 function updateProgressBar() {
     const scrollPosition = window.scrollY;
