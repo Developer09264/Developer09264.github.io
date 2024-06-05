@@ -2,7 +2,7 @@
 body {
     margin: 0;
     padding: 0;
-    overflow: auto;
+    overflow: auto; /* 修改此行 */
 }
 
 @media (max-width: 768px) {
@@ -52,12 +52,6 @@ html {
 
 /* Quotes and Progress bar styles */
 .quotes {
-    background-color: #fde299e0;
-    padding: 20px;
-}
-
-/* 设置所有田语页面的最小高度为屏幕高度 */
-.quotes {
     min-height: 100vh;
     display: flex;
     justify-content: center;
@@ -65,7 +59,7 @@ html {
     flex-direction: column;
     padding: 20px;
     box-sizing: border-box;
-    transition: opacity 0.8s ease-out;
+    transition: opacity 0.8s ease-out; /* 添加过渡效果 */
 }
 
 /* 如果内容不够屏幕高度，垂直居中显示，并在上下添加空白 */
@@ -80,6 +74,7 @@ html {
 .quotes-content::before, .quotes-content::after {
     content: "";
     flex-grow: 1;
+    transition: opacity 0.8s ease-out; /* 添加过渡效果 */
 }
 
 
