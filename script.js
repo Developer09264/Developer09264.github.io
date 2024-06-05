@@ -3,10 +3,12 @@ const quoteListElement = document.getElementById("quote-list");
 const progressBar = document.querySelector(".progress-bar");
 
 let quotes = [];
-let quoteIndex = 0;
-let touchStartY = 0;
-let touchEndY = 0;
-let isInWelcomePage = true;
+
+// 显示随机田语
+function showRandomQuote() {
+    const randomIndex = Math.floor(Math.random() * quotes.length);
+    quoteElement.textContent = quotes[randomIndex];
+}
 
 // 异步加载田语数据（假设quotes.txt包含每行一个田语）
 fetch('quotes.txt')
@@ -14,8 +16,8 @@ fetch('quotes.txt')
   .then(data => {
     quotes = data.split('\n').filter(quote => quote.trim() !== '');
     
-    // 在页面加载时显示第一条田语
-    showQuote(quoteIndex);
+    // 在页面加载时显示随机田语
+    showRandomQuote();
     
     // 将所有田语添加到田语列表
     quotes.forEach(quote => {
@@ -32,13 +34,8 @@ function showQuote(index) {
 
 // 定时切换田语（每隔3秒）
 setInterval(() => {
-    quoteIndex = (quoteIndex + 1) % quotes.length;
-    showQuote(quoteIndex);
+    showRandomQuote();
 }, 3000);
-
-
-// 获取欢迎页面的高度
-const welcomePageHeight = document.querySelector(".welcome-page").offsetHeight;
 
 // 更新进度条位置
 function updateProgressBar() {
@@ -58,8 +55,8 @@ function updateProgressBar() {
 
 // 监听页面滚动事件，以便在页面加载时更新进度条
 window.addEventListener("scroll", () => {
-
-const scrollPosition = window.scrollY;
+    const welcomePageHeight = document.querySelector(".welcome-page").offsetHeight;
+    const scrollPosition = window.scrollY;
     
     if (scrollPosition >= welcomePageHeight) {
         // 当用户滚动到全部田语页面时显示进度条
