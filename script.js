@@ -12,13 +12,16 @@ function showRandomQuote() {
     // 添加淡出效果
     quoteElement.style.opacity = 0;
 
-    // 等待0.5秒后，将新的田语内容设置并添加淡入效果
+    // 设置新的田语内容
     setTimeout(() => {
         quoteElement.textContent = newQuote;
-        quoteElement.style.opacity = 1;
-    }, 500);
-}
+    }, 500); // 在0.5秒后改变内容
 
+    // 添加淡入效果
+    setTimeout(() => {
+        quoteElement.style.opacity = 1;
+    }, 600); // 在0.6秒后淡入
+}
 
 // 异步加载田语数据（假设quotes.txt包含每行一个田语）
 fetch('quotes.txt')
@@ -36,11 +39,6 @@ fetch('quotes.txt')
       quoteListElement.appendChild(listItem);
     });
   });
-
-// 显示特定索引的田语
-function showQuote(index) {
-    quoteElement.textContent = quotes[index];
-}
 
 // 定时切换田语（每隔3秒）
 setInterval(() => {
