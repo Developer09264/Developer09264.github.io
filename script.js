@@ -7,8 +7,18 @@ let quotes = [];
 // 显示随机田语
 function showRandomQuote() {
     const randomIndex = Math.floor(Math.random() * quotes.length);
-    quoteElement.textContent = quotes[randomIndex];
+    const newQuote = quotes[randomIndex];
+
+    // 添加淡出效果
+    quoteElement.style.opacity = 0;
+
+    // 等待0.5秒后，将新的田语内容设置并添加淡入效果
+    setTimeout(() => {
+        quoteElement.textContent = newQuote;
+        quoteElement.style.opacity = 1;
+    }, 500);
 }
+
 
 // 异步加载田语数据（假设quotes.txt包含每行一个田语）
 fetch('quotes.txt')
