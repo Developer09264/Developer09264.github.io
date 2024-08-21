@@ -2,30 +2,27 @@ body {
     font-family: 'Genshin Font', sans-serif;
     margin: 0;
     padding: 0;
-    overflow: auto; /* 修改此行 */
+    overflow: auto;
 }
 
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
 @font-face {
     font-family: 'Genshin Font';
     src: url('../fonts/hk4e_zh-cn.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
 }
 
 @media (max-width: 768px) {
-  .title {
-    font-size: 32px; /* 调整标题字体大小 */
-  }
-  .quote {
-    font-size: 18px; /* 调整田语字体大小 */
-  }
+    .title {
+        font-size: 32px;
+    }
+    .quote {
+        font-size: 18px;
+    }
 }
 
-/* Welcome page styles */
 .welcome-page {
     position: relative;
     width: 100%;
@@ -38,11 +35,10 @@ html {
 
 .welcome-page.fade-out {
     opacity: 0;
-    pointer-events: none; /* 隐藏交互元素 */
+    pointer-events: none;
 }
 
 .content {
-    position: relative;
     text-align: center;
     padding-top: 30%;
 }
@@ -55,7 +51,6 @@ html {
     font-size: 24px;
 }
 
-/* Quotes and Progress bar styles */
 .quotes {
     min-height: 100vh;
     display: flex;
@@ -66,23 +61,20 @@ html {
     box-sizing: border-box;
 }
 
-/* 添加过渡效果 */
 .quotes-content {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    opacity: 0; /* 初始设置透明度为0 */
+    opacity: 0;
     transition: opacity 0.8s ease-out;
 }
 
-/* 在上下添加空白 */
 .quotes-content::before, .quotes-content::after {
     content: "";
     flex-grow: 1;
 }
 
-/* 当类名为show的元素显示时，设置透明度为1 */
 .quotes-content.show {
     opacity: 1;
 }
@@ -96,15 +88,43 @@ html {
     position: absolute;
     top: 10px;
     right: 10px;
-    display: inline-block;
     padding: 10px 20px;
-    background-color: #8a407f; /* 比背景颜色饱和度低一些 */
-    color: #000;
+    background-color: #8a407f;
+    color: #fff;
     text-decoration: none;
-    border-radius: 5px; /* 圆角矩形 */
-    transition: background-color 0.3s; /* 过渡效果 */
+    border-radius: 5px;
+    transition: background-color 0.3s;
 }
 
 .about-button:hover {
-    background-color: #8a607f; /* 鼠标放上去时饱和度更低 */
+    background-color: #8a607f;
+}
+
+#back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none;
+    background-color: #8a8a8a;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    cursor: pointer;
+    transition: opacity 0.5s ease;
+    text-align: center;
+    line-height: 50px;
+    opacity: 0;
+}
+
+#back-to-top.show {
+    display: block;
+    opacity: 1;
+}
+
+#back-to-top:hover {
+    background-color: #8a297f;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
