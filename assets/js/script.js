@@ -72,12 +72,9 @@ function checkScroll() {
         return;
     } else if (scrollPosition > window.innerHeight / 2) {
         backToTopButton.classList.add('show');
-        console.log("show");
     } else {
         backToTopButton.classList.remove('show');
-        console.log("hide");
     }
-    // backToTopButton.style.display = scrollPosition > window.innerHeight / 2 ? 'block' : 'none';
 }
 
 window.addEventListener('scroll', checkScroll);
