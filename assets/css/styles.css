@@ -33,11 +33,6 @@ html {
     transition: opacity 0.8s ease-out;
 }
 
-.welcome-page.fade-out {
-    opacity: 0;
-    pointer-events: none;
-}
-
 .content {
     text-align: center;
     padding-top: 30%;

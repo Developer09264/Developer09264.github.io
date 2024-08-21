@@ -24,7 +24,7 @@ function showRandomQuote() {
 }
 
 // 异步加载田语数据（假设quotes.txt包含每行一个田语）
-fetch('quotes.txt')
+fetch("assets/quotes.txt")
   .then(response => {
     if (!response.ok) throw new Error('Network response was not ok');
     return response.text();
@@ -48,20 +48,6 @@ fetch('quotes.txt')
 
 // 定时切换田语（每隔3秒）
 setInterval(showRandomQuote, 3000);
-
-// 监听页面滚动
-window.addEventListener("scroll", () => {
-    const welcomePage = document.querySelector(".welcome-page");
-    if (!welcomePage) return; // 如果welcomePage不存在，直接返回
-
-    // 如果用户向下滚动足够远，添加.fade-out类以触发动画
-    if (window.scrollY > window.innerHeight / 2) {
-        welcomePage.classList.add("fade-out");
-    } else {
-        // 如果用户向上滚动回到顶部，移除.fade-out类以显示欢迎页面
-        welcomePage.classList.remove("fade-out");
-    }
-});
 
 function checkScroll() {
     const scrollPosition = window.scrollY || window.pageYOffset;
