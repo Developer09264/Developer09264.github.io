@@ -7,11 +7,15 @@ let quotes = [];
 function showRandomQuote() {
   if (quotes.length === 0) return; // 如果quotes为空，直接返回
 
+  //获取随机数
   const randomIndex = Math.floor(Math.random() * quotes.length);
+
+  //获取随机田语
   const newQuote = quotes[randomIndex];
 
   // 添加淡出效果
   quoteElement.style.opacity = 0;
+  quoteElement.style.transition = 'opacity 1s'; // 设置过渡效果，持续1秒
 
   // 设置新的田语内容
   setTimeout(() => {
@@ -20,8 +24,9 @@ function showRandomQuote() {
     setTimeout(() => {
       quoteElement.style.opacity = 1;
     }, 100); // 在0.1秒后淡入
-  }, 500); // 在0.5秒后改变内容
+  }, 1000); // 在1秒后改变内容
 }
+
 
 // 异步加载田语数据（假设quotes.txt包含每行一个田语）
 fetch("assets/quotes.txt")
@@ -47,7 +52,7 @@ fetch("assets/quotes.txt")
   });
 
 // 定时切换田语（每隔3秒）
-setInterval(showRandomQuote, 3000);
+setInterval(showRandomQuote, 4000);
 
 
 //检查屏幕滚动
