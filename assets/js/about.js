@@ -1,5 +1,5 @@
 function updateTimer() {
-    const startDate = new Date(2023, 9, 2); // 月份是从0开始的，所以10月是9
+    const startDate = new Date(2023, 9, 2, 12, 29, 0); // 月份是从0开始的，所以10月是9
     const now = new Date();
     const diff = now - startDate;
     const days = Math.floor(diff / (1000 * 60 * 60 * 24));
