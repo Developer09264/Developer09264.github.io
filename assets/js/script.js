@@ -49,6 +49,8 @@ fetch("assets/quotes.txt")
 // 定时切换田语（每隔3秒）
 setInterval(showRandomQuote, 3000);
 
+
+//检查屏幕滚动
 function checkScroll() {
     const scrollPosition = window.scrollY || window.pageYOffset;
     const backToTopButton = document.getElementById('back-to-top');
@@ -56,7 +58,10 @@ function checkScroll() {
     if (!backToTopButton) {
         console.error("Element with id 'back-to-top' not found");
         return;
-    } else if (scrollPosition > window.innerHeight / 2) {
+    }
+    
+    //判断位置，为按钮元素添加类
+    if (scrollPosition > window.innerHeight / 2) {
         backToTopButton.classList.add('show');
     } else {
         backToTopButton.classList.remove('show');
