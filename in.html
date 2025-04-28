@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <title>田语 | 朴实无华，意蕴悠长</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 其他meta标签保持不变 -->
+    <style>
+        /* 动态珍珠光泽背景 */
+        @keyframes pearl-shimmer {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            background: linear-gradient(
+                135deg,
+                #fff5f5 0%,
+                #f0f5ff 25%,
+                #f5fff0 50%,
+                #fff0f5 75%,
+                #f5f0ff 100%
+            );
+            background-size: 400% 400%;
+            animation: pearl-shimmer 20s ease infinite;
+            font-family: 'Roboto', 'Segoe UI', sans-serif;
+        }
+
+        /* Material Design风格导航栏 */
+        #navbar {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            height: 64px;
+            padding: 0 24px;
+        }
+
+        .logo {
+            color: #8a297f;
+            font-size: 24px;
+            font-weight: 500;
+            padding: 16px 0;
+            transition: opacity 0.2s;
+        }
+
+        .logo:hover {
+            opacity: 0.8;
+        }
+
+        /* Google风格卡片 */
+        .quotes {
+            max-width: 1200px;
+            margin: 32px auto;
+            padding: 24px;
+        }
+
+        .quote-card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(5px);
+            border-radius: 12px;
+            padding: 24px;
+            margin: 16px 0;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .quote-card:hover {
+            box-shadow: 0 8px 12px rgba(0,0,0,0.1);
+            transform: translateY(-2px);
+        }
+
+        /* 标题样式 */
+        h2 {
+            color: #202124;
+            font-size: 24px;
+            font-weight: 500;
+            margin: 32px 0 16px;
+        }
+
+        /* Google风格按钮 */
+        .dropdown-btn {
+            background: rgba(255, 255, 255, 0.9);
+            color: #8a297f;
+            border: 1px solid #dadce0;
+            border-radius: 24px;
+            padding: 8px 24px;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .dropdown-btn:hover {
+            background: #ffffff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .quotes {
+                padding: 16px;
+            }
+            
+            .quote-card {
+                padding: 16px;
+            }
+            
+            #navbar {
+                padding: 0 16px;
+            }
+        }
+
+        /* 保留原有动画效果 */
+        .welcome-page {
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .quote {
+            font-size: 3rem;
+            color: #202124;
+            font-weight: 500;
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="navbar">
+        <a href="./index.html" class="logo">田语</a>
+        <div class="dropdown">
+            <button class="dropdown-btn">关于</button>
+            <!-- 下拉菜单保持原有结构 -->
+        </div>
+    </div>
+    
+    <div class="welcome-page">
+        <p class="quote" id="quote">田语</p>
+    </div>
+    
+    <div class="quotes">
+        <h2>所有田语</h2>
+        <!-- 示例卡片 -->
+        <div class="quote-card">
+            <p>"示例田语内容"</p>
+        </div>
+        <!-- 其他卡片结构类似 -->
+    </div>
+    
+    <!-- 其他元素保持不变 -->
+</body>
+</html>
