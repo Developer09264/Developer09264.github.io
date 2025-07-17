@@ -1,37 +1,47 @@
-body {
+/* body {
     margin: 0;
     padding: 0;
     overflow: auto;
+} */
+/* 动态背景 */
+@keyframes pearl-shimmer {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background: linear-gradient(135deg,
+            rgb(255, 220, 220) 0%,
+            rgba(220,220,255) 25%,
+            rgba(220,225,220) 50%,
+            rgba(255,220,220) 75%,
+            rgba(220,220,225) 100%);
+    background-size: 400% 400%;
+    animation: pearl-shimmer 20s ease infinite;
+    font-family: 'Segoe UI', sans-serif;
 }
 
 html {
     scroll-behavior: smooth;
 }
 
-@font-face {
-    font-family: 'Genshin Font';
-    src: url('../fonts/hk4e_zh-cn.ttf') format('truetype');
-}
-
-/* @media (max-width: 768px) {
-    .title {
-        font-size: 32px;
-    }
-
-    .quote {
-        font-size: 18px;
-    }
-} */
-
 .welcome-page {
     position: relative;
     width: 100%;
     height: 100vh;
-    background-color: #51174b;
-    /* background-image: url('https://telegraph-image-b60.pages.dev/file/924c7fd134a587655d38e.jpg');
-    background-size: 100% auto;
-    background-position: top center; */
-    color: #fff;
+    color: #391d45;
 }
 
 .content {
@@ -92,8 +102,6 @@ html {
     padding: 0;
 }
 
-
-
 #back-to-top {
     position: fixed;
     bottom: -50px;
@@ -107,7 +115,7 @@ html {
     height: 50px;
     font-size: 24px;
     cursor: pointer;
-    transition: opacity 0.5s ease, background-color 0.5s ease, bottom 0.5s ease;
+    transition: box-shadow 0.5s ease, opacity 0.5s ease, background-color 0.5s ease, bottom 0.5s ease;
     text-align: center;
     line-height: 50px;
     opacity: 0;
@@ -119,6 +127,7 @@ html {
 #back-to-top:hover {
     background-color: #8a297f;
     opacity: 1;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 }
 
 #back-to-top.show {
@@ -138,41 +147,79 @@ html {
     transition: opacity 0.5s;
     background-color: #d6d6d695;
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     align-items: center;
     padding: 0 20px;
     box-sizing: border-box;
     z-index: 1;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
 }
 
 #navbar.show {
     opacity: 1;
     pointer-events: auto;
-}
-
-.about-button {
-    position: absolute;
-    right: 20px;
-    padding: 10px 20px;
-    background-color: #d6d6d695;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-}
-
-.about-button:hover {
-    background-color: #8a407f;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 }
 
 .logo {
     position: absolute;
     left: 20px;
     padding: 10px 20px;
-    /* background-color: #8a407f; */
     color: #8a297f;
     font-size: 50px;
     text-decoration: none;
     border-radius: 5px;
     transition: background-color 0.3s;
+}
+
+/* Dropdown styles */
+.dropdown {
+    margin-left: auto;
+    /* 推向右端 */
+}
+
+.dropdown-btn {
+    padding: 10px 20px;
+    background-color: #d6d6d695;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    cursor: pointer;
+    border: none;
+    font-size: inherit;
+    font-family: inherit;
+}
+
+.dropdown-btn:hover {
+    background-color: #8a407f;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.dropdown-content a {
+    color: #8a297f;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s;
+}
+
+.dropdown-content a:hover {
+    background-color: #f2e3f6;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
 }
