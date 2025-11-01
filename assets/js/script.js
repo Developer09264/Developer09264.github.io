@@ -85,17 +85,17 @@ function checkScroll() {
   }
 }
 
-  window.addEventListener('scroll', checkScroll);
-  window.addEventListener('load', checkScroll);
+window.addEventListener('scroll', checkScroll);
+window.addEventListener('load', checkScroll);
 
-  document.getElementById('back-to-top')?.addEventListener('click', function () {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
+document.getElementById('back-to-top')?.addEventListener('click', function () {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
 
-  document.addEventListener('visibilitychange', function () {
-    if (document.visibilityState === 'hidden') {
-      document.title = '人在做，天在看';
-    } else {
-      document.title = '田语 | 朴实无华，意蕴悠长';
-    }
-  });
+document.addEventListener('visibilitychange', function () {
+  if (document.visibilityState === 'hidden') {
+    document.title = '人在做，天在看';
+  } else {
+    document.title = '田语 | 朴实无华，意蕴悠长';
+  }
+});

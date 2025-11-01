@@ -24,10 +24,10 @@ body {
     min-height: 100vh;
     background: linear-gradient(135deg,
             rgb(255, 220, 220) 0%,
-            rgba(220,220,255) 25%,
-            rgba(220,225,220) 50%,
-            rgba(255,220,220) 75%,
-            rgba(220,220,225) 100%);
+            rgba(220, 220, 255) 25%,
+            rgba(220, 225, 220) 50%,
+            rgba(255, 220, 220) 75%,
+            rgba(220, 220, 225) 100%);
     background-size: 400% 400%;
     animation: pearl-shimmer 20s ease infinite;
     font-family: 'Segoe UI', sans-serif;
@@ -147,13 +147,14 @@ html {
     transition: opacity 0.5s;
     background-color: #d6d6d695;
     display: flex;
-    /* justify-content: space-between; */
     align-items: center;
     padding: 0 20px;
     box-sizing: border-box;
     z-index: 1;
     border-bottom-right-radius: 10px;
     border-bottom-left-radius: 10px;
+    /* filter: blur(5px); */
+    backdrop-filter: blur(5px);
 }
 
 #navbar.show {
