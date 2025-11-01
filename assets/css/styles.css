@@ -1,9 +1,3 @@
-/* body {
-    margin: 0;
-    padding: 0;
-    overflow: auto;
-} */
-/* 动态背景 */
 @keyframes pearl-shimmer {
     0% {
         background-position: 0% 50%;
@@ -38,7 +32,6 @@ html {
 }
 
 .welcome-page {
-    position: relative;
     width: 100%;
     height: 100vh;
     color: #391d45;
@@ -47,10 +40,6 @@ html {
 .content {
     text-align: center;
     padding-top: 30%;
-}
-
-.title {
-    font-size: 48px;
 }
 
 .quote {
@@ -78,6 +67,35 @@ html {
     background-color: #f2e3f6;
 }
 
+#quotepad {
+    min-height: 100vh;
+    width: 50vw;
+    border-radius: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 10vh;
+    margin: 20vh auto;
+    background-color: rgba(247, 244, 251, 0.9);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+
+#footer {
+    height: 20vh;
+    width: 100vw;
+    background-color: #c4c4c4bd;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: auto;
+}
+
+h2 {
+    color: #8a297f;
+    font-size: 4vh;
+}
+
 .quotes-content {
     flex-grow: 1;
     display: flex;
@@ -100,6 +118,7 @@ html {
 #quote-list {
     list-style: none;
     padding: 0;
+    font-size: 3vh;
 }
 
 #back-to-top {
@@ -136,6 +155,12 @@ html {
     bottom: 20px;
 }
 
+.ma-shan-zheng-regular {
+    font-family: "Ma Shan Zheng", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
 #navbar {
     position: fixed;
     top: 0;
@@ -144,8 +169,8 @@ html {
     height: 12.5vh;
     opacity: 0;
     pointer-events: none;
-    transition: opacity 0.5s;
-    background-color: #d6d6d695;
+    transition: opacity 0.8s, background-color 0.4s;
+    background-color: rgba(225, 225, 225, 0.2);
     display: flex;
     align-items: center;
     padding: 0 20px;
@@ -153,14 +178,17 @@ html {
     z-index: 1;
     border-bottom-right-radius: 10px;
     border-bottom-left-radius: 10px;
-    /* filter: blur(5px); */
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     backdrop-filter: blur(5px);
 }
 
 #navbar.show {
     opacity: 1;
     pointer-events: auto;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+
+#navbar:hover {
+    background-color: rgba(255, 255, 255, 0.8);
 }
 
 .logo {
@@ -174,10 +202,8 @@ html {
     transition: background-color 0.3s;
 }
 
-/* Dropdown styles */
 .dropdown {
     margin-left: auto;
-    /* 推向右端 */
 }
 
 .dropdown-btn {

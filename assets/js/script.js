@@ -51,7 +51,7 @@ fetch("assets/quotes.txt")
     console.error('There was a problem with the fetch operation:', error);
   });
 
-// 定时切换田语（每隔3秒）
+  
 setInterval(showRandomQuote, 4000);
 
 
