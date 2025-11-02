@@ -51,7 +51,7 @@ fetch("assets/quotes.txt")
     console.error('There was a problem with the fetch operation:', error);
   });
 
-  
+
 setInterval(showRandomQuote, 4000);
 
 
