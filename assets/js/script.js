@@ -19,7 +19,7 @@ function showRandomQuote() {
 
   // 设置新的田语内容
   setTimeout(() => {
-    quoteElement.textContent = newQuote;
+    quoteElement.innerHTML = newQuote;
     // 添加淡入效果
     setTimeout(() => {
       quoteElement.style.opacity = 1;
