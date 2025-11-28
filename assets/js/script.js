@@ -43,7 +43,7 @@ fetch("assets/quotes.txt")
     // 将所有田语添加到田语列表
     quotes.forEach(quote => {
       const listItem = document.createElement("li");
-      listItem.textContent = quote;
+      listItem.innerHTML = quote;
       quoteListElement.appendChild(listItem);
     });
   })
