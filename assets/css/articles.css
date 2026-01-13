@@ -1,0 +1,55 @@
+.card-container {
+    flex-direction: column;
+    /* 关键：纵向堆叠 */
+    gap: 20px;
+    /* 卡片之间的间距 */
+}
+
+.nav-card {
+    /* 保留之前的布局样式 */
+    display: flex;
+    align-items: center;
+    background: #fff;
+    padding: 20px 30px;
+    border-radius: 15px;
+    text-decoration: none;
+    color: inherit;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    margin-bottom: 20px;
+    /* 确保卡片间有间距 */
+
+    /* --- 核心动画初始状态 --- */
+    opacity: 0;
+    /* 初始透明 */
+    transform: translateX(-50px);
+    /* 初始向下偏移 50px */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out, box-shadow 0.3s ease;
+    /* 增加 transform和opacity 的过渡 */
+}
+
+.nav-card.show {
+    opacity: 1;
+    /* 变回不透明 */
+    transform: translateX(0);
+    /* 回到原位 */
+}
+
+.nav-card p{
+    color: gray;
+}
+
+.nav-card:hover {
+    transition-delay: 0s !important;
+    /* 关键：划掉之前的等待时间，立刻响应 */
+    transition-duration: 0.2s !important;
+    /* 关键：Hover 动画通常要比入场动画快，0.2s 比较跟手 */
+}
+
+.nav-card.show:hover {
+    transform: translateX(10px);
+    /* 仅在显示后允许向右滑动 */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    border-color: #8000ff;
+    /* 可选：悬停时边框变色 */
+}
