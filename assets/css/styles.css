@@ -27,8 +27,10 @@ body {
     font-family: 'Segoe UI', sans-serif;
 }
 
-html {
-    scroll-behavior: smooth;
+.logo img{
+    width: 50px;
+    height: auto;
+
 }
 
 .welcome-page {
@@ -67,20 +69,6 @@ html {
     background-color: #f2e3f6;
 }
 
-#quotepad {
-    min-height: 100vh;
-    width: 50vw;
-    border-radius: 5vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    padding: 10vh;
-    margin: 20vh auto;
-    background-color: rgba(247, 244, 251, 0.9);
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-}
-
 #footer {
     height: 20vh;
     width: 100vw;
@@ -113,12 +101,6 @@ h2 {
 
 .quotes-content.show {
     opacity: 1;
-}
-
-#quote-list {
-    list-style: none;
-    padding: 0;
-    font-size: 3vh;
 }
 
 #back-to-top {
@@ -212,7 +194,7 @@ h2 {
     color: #fff;
     text-decoration: none;
     border-radius: 5px;
-    transition: background-color 0.3s;
+    transition: transform 0.3s, background-color 0.3s, box-shadow 0.4s;
     cursor: pointer;
     border: none;
     font-size: inherit;
@@ -221,6 +203,7 @@ h2 {
 
 .dropdown-btn:hover {
     background-color: #8a407f;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 }
 
 .dropdown-content {
@@ -249,4 +232,124 @@ h2 {
 
 .dropdown:hover .dropdown-content {
     display: block;
+}
+
+
+.card {
+    border-radius: 2em;
+    /* min-height: 100vh; */
+    /* width: 50vw; */
+    border-radius: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 10vh;
+    background-color: rgba(247, 244, 251, 0.9);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+
+}
+
+/* ------------------------- */
+
+#more-contents h2 {
+    margin-bottom: 30px;
+    font-size: 2rem;
+    color: #333;
+}
+
+#more-contents {
+    padding: 40px 20px;
+    max-width: 800px;
+    /* 限制最大宽度，让长条不要太长 */
+    margin: 0 auto;
+    /* 居中 */
+}
+
+.card-container {
+    display: flex;
+    flex-direction: column;
+    /* 关键：纵向堆叠 */
+    gap: 20px;
+    /* 卡片之间的间距 */
+}
+
+.nav-card {
+    /* 保留之前的布局样式 */
+    display: flex;
+    align-items: center;
+    background: #fff;
+    padding: 20px 30px;
+    border-radius: 15px;
+    text-decoration: none;
+    color: inherit;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    margin-bottom: 20px;
+    /* 确保卡片间有间距 */
+
+    /* --- 核心动画初始状态 --- */
+    opacity: 0;
+    /* 初始透明 */
+    transform: translateX(-50px);
+    /* 初始向下偏移 50px */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out, box-shadow 0.3s ease;
+    /* 增加 transform和opacity 的过渡 */
+}
+
+.nav-card.show {
+    opacity: 1;
+    /* 变回不透明 */
+    transform: translateX(0);
+    /* 回到原位 */
+}
+
+.nav-card:nth-child(1) {
+    transition-delay: 0.1s;
+}
+
+.nav-card:nth-child(2) {
+    transition-delay: 0.2s;
+}
+
+.nav-card:nth-child(3) {
+    transition-delay: 0.3s;
+}
+
+.nav-card:hover {
+    transition-delay: 0s !important; /* 关键：划掉之前的等待时间，立刻响应 */
+    transition-duration: 0.2s !important; /* 关键：Hover 动画通常要比入场动画快，0.2s 比较跟手 */
+}
+
+.nav-card.show:hover {
+    transform: translateX(10px);
+    /* 仅在显示后允许向右滑动 */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    border-color: #8000ff;
+    /* 可选：悬停时边框变色 */
+}
+
+.card-icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.nav-card h3 {
+    margin: 10px 0;
+    font-size: 1.5rem;
+    color: #2c3e50;
+}
+
+.nav-card p {
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.5;
+}
+
+/* 手机端适配 */
+@media (max-width: 768px) {
+    .nav-card {
+        width: 100%;
+        /* 手机端占满宽度 */
+    }
 }
