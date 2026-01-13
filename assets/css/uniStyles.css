@@ -1,0 +1,109 @@
+/* 动态背景 */
+@keyframes pearl-shimmer {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background: linear-gradient(135deg,
+            #fff5f5 0%,
+            #f0f5ff 25%,
+            #f5fff0 50%,
+            #fff0f5 75%,
+            #f5f0ff 100%);
+    background-size: 400% 400%;
+    animation: pearl-shimmer 20s ease infinite;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* 导航栏 */
+.nav {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.nav a {
+    color: #8a297f;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+/* 卡片容器 */
+.container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+/* 卡片样式 */
+.card {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(5px);
+    border-radius: 15px;
+    padding: 2rem;
+    margin: 2rem 0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+}
+
+/* 标题样式 */
+h1 {
+    color: #8a297f;
+    font-size: 3rem;
+    text-align: center;
+    margin: 2rem 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #6b205f;
+    border-left: 4px solid #8a297f;
+    padding-left: 1rem;
+    margin: 1.5rem 0;
+}
+
+/* 外号列表 */
+.nickname-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.nickname-list li {
+    background: #f8e3f5;
+    padding: 0.5rem 1.2rem;
+    border-radius: 20px;
+    font-weight: 500;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 0.5rem;
+    }
+
+    .card {
+        padding: 1.5rem;
+        margin: 1rem 0;
+    }
+
+    h1 {
+        font-size: 2.2rem;
+    }
+}
