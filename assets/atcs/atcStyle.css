@@ -1,0 +1,68 @@
+@keyframes pearl-shimmer {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background: linear-gradient(135deg,
+            #fff5f5 0%,
+            #f0f5ff 25%,
+            #f5fff0 50%,
+            #fff0f5 75%,
+            #f5f0ff 100%);
+    background-size: 400% 400%;
+    animation: pearl-shimmer 20s ease infinite;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.nav {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.nav a {
+    color: #8a297f;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.content {
+    font-size:large;
+    /* display: flex;
+    flex-direction: column; */
+    align-items: center;
+    background: #fff;
+    padding: 20px 30px;
+    border-radius: 15px;
+    text-decoration: none;
+    color: inherit;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    margin-bottom: 20px;
+}
+p {
+  text-indent: 2em;
+}
