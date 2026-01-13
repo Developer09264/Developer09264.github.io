@@ -6,27 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>田语 | 相关文章</title>
     <link rel="stylesheet" type="text/css" href="../css/uniStyles.css">
-    <style>
-        #quotepad {
-            min-height: 100vh;
-            width: 50vw;
-            border-radius: 5vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            padding: 10vh;
-            margin: 20vh auto;
-            background-color: rgba(247, 244, 251, 0.9);
-            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-        }
-
-        #quote-list {
-            list-style: none;
-            padding: 0;
-            font-size: 3vh;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="../css/articles.css">
 </head>
 
 <body>
@@ -35,17 +15,20 @@
     </nav>
 
     <div class="container">
-        <h1>- 所有田语 -</h1>
-        <div id="quotepad">
-            <ol id="quote-list">
-
-            </ol>
+        <h1>- 相关文章 -</h1>
+        <div id="card-container">
+            <a href="../atcs/a01.html" class="card nav-card">
+                <div class="card-text">
+                    <h2>月儿为何会“徘徊”</h2>
+                    <p>田老师的得意作品，对“徘徊于斗牛之间”的思考</p>
+                </div>
+            </a>
         </div>
 
 
         </ol>
     </div>
-    <script src="../js/allQuotes.js"></script>
+    <script src="../js/articles.js"></script>
 </body>
 
 </html>
