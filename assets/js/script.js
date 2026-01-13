@@ -39,13 +39,6 @@ fetch("assets/quotes.txt")
 
     // 在页面加载时显示随机田语
     showRandomQuote();
-
-    // 将所有田语添加到田语列表
-    quotes.forEach(quote => {
-      const listItem = document.createElement("li");
-      listItem.innerHTML = quote;
-      quoteListElement.appendChild(listItem);
-    });
   })
   .catch(error => {
     console.error('There was a problem with the fetch operation:', error);
