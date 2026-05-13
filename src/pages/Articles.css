@@ -1,0 +1,33 @@
+.articles-page {
+    min-height: 80vh;
+}
+
+.articles-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 800px;
+    margin: 0 auto 50px;
+}
+
+.article-card {
+    padding: 1.5rem 2rem;
+    text-decoration: none;
+    color: inherit;
+}
+
+.article-card:hover {
+    transform: translateX(10px) translateY(-5px);
+}
+
+.article-card h2 {
+    margin: 0 0 10px 0;
+    border: none;
+    padding: 0;
+    font-size: 1.8rem;
+}
+
+.article-card p {
+    margin: 0;
+    color: #666;
+}

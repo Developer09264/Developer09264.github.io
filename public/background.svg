@@ -1,0 +1,12 @@
+<svg width="1920" height="1080" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg">
+  <!-- 淡紫色背景 -->
+  <rect width="1920" height="1080" fill="#faf8ff" />
+
+  <!-- 随机紫色正方形 + 圆形（共6个，分布均匀） -->
+  <rect x="220" y="140" width="180" height="180" fill="#d4b3ff" />
+  <circle cx="1400" cy="220" r="110" fill="#b64fff" />
+  <rect x="600" y="500" width="160" height="260" fill="#9a40b8" />
+  <circle cx="400" cy="850" r="130" fill="#c49fff" />
+  <rect x="1300" y="700" width="230" height="150" fill="#6f2ec5" />
+  <circle cx="900" cy="300" r="200" fill="#c49fff" />
+</svg>

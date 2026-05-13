@@ -1,0 +1,18 @@
+.about-page {
+    min-height: 80vh;
+}
+
+.about-page .card {
+    padding: 2rem;
+    margin: 2rem 0;
+}
+
+.about-page h1 {
+    margin-bottom: 2rem;
+}
+
+.about-page p {
+    line-height: 1.8;
+    font-size: 1.1rem;
+    color: #444;
+}
